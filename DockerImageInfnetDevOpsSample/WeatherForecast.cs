@@ -10,4 +10,5 @@ namespace DockerImageInfnetDevOpsSample
 
         public string? Summary { get; set; }
     }
+
 }
