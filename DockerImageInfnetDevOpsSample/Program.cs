@@ -34,6 +34,7 @@ builder.Services.AddHealthChecksUI(s =>
     s.AddHealthCheckEndpoint("Infnet API", "https://localhost:44319/healthz");
 })
 .AddInMemoryStorage();
+builder.Services.AddApplicationInsightsTelemetry(builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]);
 
 
 var app = builder.Build();
