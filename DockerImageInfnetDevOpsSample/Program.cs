@@ -7,6 +7,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Add Health Check
+builder.Services.AddHealthChecks();
+builder.Services.AddHealthChecksUI()
+                .AddInMemoryStorage();
+
 var app = builder.Build();
 
     app.UseSwagger();
@@ -19,5 +24,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseRouting()
+    .UseEndpoints(config => config.MapHealthChecksUI());
 
 app.Run();
