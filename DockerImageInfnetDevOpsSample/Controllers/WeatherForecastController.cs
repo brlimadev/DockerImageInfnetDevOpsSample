@@ -40,6 +40,7 @@ namespace DockerImageInfnetDevOpsSample.Controllers
                 Date = DateTime.Now,
                 TemperatureC = Random.Shared.Next(-20, 55) / count,
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+
             };
         }
     }
